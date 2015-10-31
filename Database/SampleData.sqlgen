@@ -744,6 +744,20 @@ WHERE   SchoolId IN ( SELECT TOP 500
                       FROM      dbo.Schools
                       ORDER BY  SchoolId ASC )</Script>
     </value>
+    <value version="1" type="SQLScript">
+      <SQLScriptType>InternalSQLScript</SQLScriptType>
+      <Name>90210 zipcode</Name>
+      <Script>UPDATE  dbo.Pupils
+SET     PostalZipCode = '90211'
+WHERE   PostalZipCode = '90210'
+
+UPDATE  dbo.Pupils
+SET     PostalZipCode = '90210'
+WHERE   PupilId IN ( SELECT TOP 1000
+                            PupilId
+                     FROM   dbo.Pupils
+                     ORDER BY PupilId ASC )</Script>
+    </value>
   </PostScripts>
   <IsRefresh>False</IsRefresh>
 </Project>
