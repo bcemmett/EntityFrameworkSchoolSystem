@@ -57,6 +57,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\EFSchoolSystemContext.cs" />
+    <Compile Include="Models\Mapping\PupilMap.cs" />
+    <Compile Include="Models\Mapping\SchoolMap.cs" />
+    <Compile Include="Models\Pupil.cs" />
+    <Compile Include="Models\School.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
