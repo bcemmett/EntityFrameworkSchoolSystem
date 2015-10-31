@@ -19,7 +19,7 @@ Version:3.1.0.226-->
       <TableType>Generated</TableType>
       <PopulationDetails version="1" type="PopulationDetails">
         <PopulationType>RowCount</PopulationType>
-        <RowCount>2500000</RowCount>
+        <RowCount>30000000</RowCount>
         <ProportionTableExists>False</ProportionTableExists>
         <Proportion>0</Proportion>
         <TimeToPopulate>0</TimeToPopulate>
