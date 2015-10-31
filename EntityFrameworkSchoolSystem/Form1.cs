@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityFrameworkSchoolSystem.Models;
 
 namespace EntityFrameworkSchoolSystem
 {
@@ -15,6 +12,61 @@ namespace EntityFrameworkSchoolSystem
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                string city = "New York";
+
+                List<School> schools = db.Schools.ToList();
+                List<School> newYorkSchools = schools.Where(s => s.City == city).ToList();
+                
+                textBox_Output.Text = String.Empty;
+                foreach (var school in newYorkSchools)
+                {
+                    textBox_Output.Text += school.Name + Environment.NewLine;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                string city = "New York";
+
+                List<School> schools = db.Schools.Where(s => s.City == city).ToList();
+                var sb = new StringBuilder();
+                foreach(var school in schools)
+                {
+                    sb.Append(school.Name);
+                    sb.Append(": ");
+                    sb.Append(school.Pupils.Count);
+                    sb.Append(Environment.NewLine);
+                }
+                textBox_Output.Text = sb.ToString();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                int schoolId = 1;
+
+                List<Pupil> pupils = db.Pupils
+                    .Where(p => p.SchoolId == schoolId)
+                    .ToList();
+
+                textBox_Output.Text = String.Empty;
+                foreach(var pupil in pupils)
+                {
+                    textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
+                    textBox_Output.Text += Environment.NewLine;
+                }
+            }
         }
     }
 }
