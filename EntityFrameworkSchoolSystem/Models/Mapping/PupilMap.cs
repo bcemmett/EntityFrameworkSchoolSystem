@@ -48,6 +48,7 @@ namespace EntityFrameworkSchoolSystem.Models.Mapping
             this.Property(t => t.City).HasColumnName("City");
             this.Property(t => t.PhoneNumber).HasColumnName("PhoneNumber");
             this.Property(t => t.SchoolId).HasColumnName("SchoolId");
+            this.Property(t => t.Picture).HasColumnName("Picture");
 
             // Relationships
             this.HasRequired(t => t.School)

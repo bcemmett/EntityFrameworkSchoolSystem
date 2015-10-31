@@ -362,6 +362,58 @@ Version:3.1.0.226-->
             </GeneratorProperties>
           </Generator>
         </value>
+        <value version="1" type="SDGField">
+          <Name>Picture</Name>
+          <FieldType>Generated</FieldType>
+          <PrimaryKey>False</PrimaryKey>
+          <ForeignKey>False</ForeignKey>
+          <Unique>False</Unique>
+          <AllowsNulls>True</AllowsNulls>
+          <SqlType>Varbinary</SqlType>
+          <Precision>0</Precision>
+          <Scale>0</Scale>
+          <DefinedSize>-1</DefinedSize>
+          <Generator version="1" type="GeneratorDetails">
+            <GeneratorTypeName>RedGate.SQLDataGenerator.Generators.Binary.BinaryGenerator</GeneratorTypeName>
+            <DisplayName>binary</DisplayName>
+            <Description>Generates BLOBs</Description>
+            <CategoryName>SQL Type</CategoryName>
+            <GeneratorProperties type="Dictionary&lt;string, object&gt;" version="1">
+              <element>
+                <key type="string">UserControl</key>
+                <value type="string" />
+              </element>
+              <element>
+                <key type="string">IGeneratorSimpleUI</key>
+                <value type="string" />
+              </element>
+              <element>
+                <key type="string">Unique</key>
+                <value type="string">False</value>
+              </element>
+              <element>
+                <key type="string">MinLength</key>
+                <value type="string">1000</value>
+              </element>
+              <element>
+                <key type="string">MaxLength</key>
+                <value type="string">1000</value>
+              </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">9</value>
+              </element>
+              <element>
+                <key type="string">NullsAllowed</key>
+                <value type="string">True</value>
+              </element>
+              <element>
+                <key type="string">NullProportion</key>
+                <value type="string">0.01</value>
+              </element>
+            </GeneratorProperties>
+          </Generator>
+        </value>
       </Fields>
       <ForeignKeyProperties type="List&lt;ForeignKeyProperty&gt;" version="1">
         <value version="1" type="ForeignKeyProperty">
@@ -424,7 +476,7 @@ Version:3.1.0.226-->
             <GeneratorProperties type="Dictionary&lt;string, object&gt;" version="1">
               <element>
                 <key type="string">Expression</key>
-                <value type="string">(The |Little |Main )(North |South |East |West |New |Old |)(St Albany |Cliff |Bernard's |St Hugh's|Sacred Point |Chester |Malling |Thomas |Derby |Andrew's |St Stefan's |Joseph's |)(Town |City )(Junior |Starter |High |Early |Preparatory |Special |)(School|College|Academy)</value>
+                <value type="string">(The |Little |Main |Big )(North |South |East |West |New |Old |Central |)(St Albany |Cliff |Bernard's |St Hugh's |Sacred Point |Chester |Malling |Thomas |Derby |Andrew's |St Stefan's |Joseph's |Governor's )(Town |City |Village |State )(Junior |Starter |High |Early |Preparatory |Special |)(School|College|Academy|Center of Excellence|Nursery|Play Group)</value>
               </element>
               <element>
                 <key type="string">Unique</key>

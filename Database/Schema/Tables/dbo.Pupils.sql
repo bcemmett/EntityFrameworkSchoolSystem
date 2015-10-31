@@ -8,8 +8,9 @@ CREATE TABLE [dbo].[Pupils]
 [PostalZipCode] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [City] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [PhoneNumber] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[SchoolId] [int] NOT NULL
-) ON [PRIMARY]
+[SchoolId] [int] NOT NULL,
+[Picture] [varbinary] (max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Pupils] ADD CONSTRAINT [PK_PupilId] PRIMARY KEY CLUSTERED  ([PupilId]) ON [PRIMARY]
 GO
