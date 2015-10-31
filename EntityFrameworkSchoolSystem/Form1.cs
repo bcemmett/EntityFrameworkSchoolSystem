@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using EntityFrameworkSchoolSystem.Models;
@@ -62,6 +63,26 @@ namespace EntityFrameworkSchoolSystem
 
                 textBox_Output.Text = String.Empty;
                 foreach(var pupil in pupils)
+                {
+                    textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
+                    textBox_Output.Text += Environment.NewLine;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                string zipCode = "90210";
+
+                var pupils = db.Pupils
+                    .Where(p => p.PostalZipCode == zipCode)
+                    .Select(x => new {x.FirstName, x.LastName})
+                    .ToList();
+
+                textBox_Output.Text = String.Empty;
+                foreach (var pupil in pupils)
                 {
                     textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
                     textBox_Output.Text += Environment.NewLine;
