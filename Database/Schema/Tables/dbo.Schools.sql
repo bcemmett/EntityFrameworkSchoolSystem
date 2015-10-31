@@ -8,6 +8,8 @@ CREATE TABLE [dbo].[Schools]
 [City] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [PhoneNumber] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
+CREATE NONCLUSTERED INDEX [NonClusteredIndex_Id_Name_ZipCode] ON [dbo].[Schools] ([SchoolId], [Name], [PostalZipCode]) INCLUDE ([Address1], [Address2], [City], [PhoneNumber]) ON [PRIMARY]
+
 GO
 ALTER TABLE [dbo].[Schools] ADD CONSTRAINT [PK_SchoolId] PRIMARY KEY CLUSTERED  ([SchoolId]) ON [PRIMARY]
 GO
