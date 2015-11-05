@@ -102,12 +102,15 @@ namespace EntityFrameworkSchoolSystem
                     .Select(x => new { x.FirstName, x.LastName })
                     .ToList();
 
-                textBox_Output.Text = String.Empty;
+                var sb = new StringBuilder();
                 foreach (var pupil in pupils)
                 {
-                    textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
-                    textBox_Output.Text += Environment.NewLine;
+                    sb.Append(pupil.FirstName);
+                    sb.Append(" ");
+                    sb.Append(pupil.LastName);
+                    sb.Append(Environment.NewLine);
                 }
+                textBox_Output.Text = sb.ToString();
             }
         }
     }
