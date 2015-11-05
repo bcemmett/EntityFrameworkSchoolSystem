@@ -758,6 +758,20 @@ WHERE   PupilId IN ( SELECT TOP 1000
                      FROM   dbo.Pupils
                      ORDER BY PupilId ASC )</Script>
     </value>
+    <value version="1" type="SQLScript">
+      <SQLScriptType>InternalSQLScript</SQLScriptType>
+      <Name>New York Pupils</Name>
+      <Script>UPDATE  dbo.Pupils
+SET     City = 'Portland'
+WHERE   City = 'New York'
+
+UPDATE  dbo.Pupils
+SET     City = 'New York'
+WHERE   PupilId IN ( SELECT TOP 100000
+                                PupilId
+                      FROM      dbo.Pupils
+                      ORDER BY  PupilId ASC )</Script>
+    </value>
   </PostScripts>
   <IsRefresh>False</IsRefresh>
 </Project>
