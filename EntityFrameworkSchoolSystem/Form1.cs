@@ -93,6 +93,7 @@ namespace EntityFrameworkSchoolSystem
         {
             using (var db = new EFSchoolSystemContext())
             {
+                db.Database.CommandTimeout = 300;
                 string city = "New York";
 
                 var pupils = db.Pupils
