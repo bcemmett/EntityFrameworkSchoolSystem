@@ -113,5 +113,50 @@ namespace EntityFrameworkSchoolSystem
                 textBox_Output.Text = sb.ToString();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                string firstName = "Ben";
+                string lastName = String.Empty;
+                string city = String.Empty;
+                string postCode = String.Empty;
+                List<Pupil> pupils = db.Pupils.Where(p =>
+                        (firstName == String.Empty || p.FirstName == firstName)
+                        && (lastName == String.Empty || p.LastName == lastName)
+                        && (city == String.Empty || p.LastName == city)
+                        && (postCode == String.Empty || p.PostalZipCode == postCode)
+                    )
+                    .Take(100)
+                    .ToList();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                for (int i = 0; i < 2000; i++)
+                {
+                    Pupil pupil = GetNewPupil();
+                    db.Pupils.Add(pupil);
+                }
+                db.SaveChanges();
+            }
+        }
+
+        private Pupil GetNewPupil()
+        {
+            return new Pupil
+            {
+                FirstName = "Josephine",
+                LastName = "Tomkinson",
+                Address1 = "1234 West Ave",
+                City = "New Houndslow",
+                PostalZipCode = "12345",
+                SchoolId = 1
+            };
+        }
     }
 }
