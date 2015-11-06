@@ -146,6 +146,23 @@ namespace EntityFrameworkSchoolSystem
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                string city = "New York";
+                List<School> schools = db.Schools
+                    .Where(s => s.City == city)
+                    .Take(100)
+                    .ToList();
+
+                foreach (var school in schools)
+                {
+                    textBox_Output.Text += school.Name + Environment.NewLine;
+                }
+            }
+        }
+
         private Pupil GetNewPupil()
         {
             return new Pupil
