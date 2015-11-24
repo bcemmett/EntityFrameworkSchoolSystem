@@ -1,6 +1,6 @@
 ﻿namespace EntityFrameworkSchoolSystem
 {
-    partial class Form1
+    partial class QueryForm
     {
         /// <summary>
         /// Required designer variable.

@@ -7,9 +7,9 @@ using EntityFrameworkSchoolSystem.Models;
 
 namespace EntityFrameworkSchoolSystem
 {
-    public partial class Form1 : Form
+    public partial class QueryForm : Form
     {
-        public Form1()
+        public QueryForm()
         {
             InitializeComponent();
         }
