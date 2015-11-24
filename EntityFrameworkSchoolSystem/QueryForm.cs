@@ -16,7 +16,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 string city = "New York";
@@ -36,7 +36,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 string city = "New York";
@@ -56,7 +56,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 int schoolId = 1;
@@ -79,7 +79,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 string zipCode = "90210";
@@ -103,7 +103,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 db.Database.CommandTimeout = 300;
@@ -129,7 +129,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 string firstName = "Ben";
@@ -159,7 +159,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 var model = new ResultsModel();
@@ -184,7 +184,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FetchingDataUseFeedback();
+            PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
                 for (int i = 0; i < 2000; i++)
@@ -211,7 +211,7 @@ namespace EntityFrameworkSchoolSystem
             };
         }
 
-        private void FetchingDataUseFeedback()
+        private void PrintThatFetchingData()
         {
             textBox_Output.Text = "Fetching data...";
             Refresh();
