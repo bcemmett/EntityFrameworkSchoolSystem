@@ -23,11 +23,13 @@ namespace EntityFrameworkSchoolSystem
                 List<School> schools = db.Schools.ToList();
                 List<School> newYorkSchools = schools.Where(s => s.City == city).ToList();
                 
-                textBox_Output.Text = String.Empty;
+                var sb = new StringBuilder();
                 foreach (var school in newYorkSchools)
                 {
-                    textBox_Output.Text += school.Name + Environment.NewLine;
+                    sb.Append(school.Name);
+                    sb.Append(Environment.NewLine);
                 }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
@@ -60,12 +62,15 @@ namespace EntityFrameworkSchoolSystem
                     .Where(p => p.SchoolId == schoolId)
                     .ToList();
 
-                textBox_Output.Text = String.Empty;
+                var sb = new StringBuilder();
                 foreach(var pupil in pupils)
                 {
-                    textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
-                    textBox_Output.Text += Environment.NewLine;
+                    sb.Append(pupil.FirstName);
+                    sb.Append(" ");
+                    sb.Append(pupil.LastName);
+                    sb.Append(Environment.NewLine);
                 }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
@@ -80,12 +85,15 @@ namespace EntityFrameworkSchoolSystem
                     .Select(x => new {x.FirstName, x.LastName})
                     .ToList();
 
-                textBox_Output.Text = String.Empty;
+                var sb = new StringBuilder();
                 foreach (var pupil in pupils)
                 {
-                    textBox_Output.Text += pupil.FirstName + " " + pupil.LastName;
-                    textBox_Output.Text += Environment.NewLine;
+                    sb.Append(pupil.FirstName);
+                    sb.Append(" ");
+                    sb.Append(pupil.LastName);
+                    sb.Append(Environment.NewLine);
                 }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
@@ -130,6 +138,16 @@ namespace EntityFrameworkSchoolSystem
                     )
                     .Take(100)
                     .ToList();
+
+                var sb = new StringBuilder();
+                foreach (var pupil in pupils)
+                {
+                    sb.Append(pupil.FirstName);
+                    sb.Append(" ");
+                    sb.Append(pupil.LastName);
+                    sb.Append(Environment.NewLine);
+                }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
@@ -143,6 +161,8 @@ namespace EntityFrameworkSchoolSystem
                     db.Pupils.Add(pupil);
                 }
                 db.SaveChanges();
+
+                textBox_Output.Text = "Finished adding data";
             }
         }
 
@@ -156,10 +176,13 @@ namespace EntityFrameworkSchoolSystem
                     .Take(100)
                     .ToList();
 
+                var sb = new StringBuilder();
                 foreach (var school in schools)
                 {
-                    textBox_Output.Text += school.Name + Environment.NewLine;
+                    sb.Append(school.Name);
+                    sb.Append(Environment.NewLine);
                 }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
@@ -170,12 +193,20 @@ namespace EntityFrameworkSchoolSystem
                 var model = new ResultsModel();
                 var rnd = new Random();
                 model.Page = rnd.Next(1,1000);
-                model.ResultsPerPage = 100;
+                model.ResultsPerPage = rnd.Next(10, 100);
                 var schools = db.Schools
                     .OrderBy(s => s.PostalZipCode)
                     .Skip(model.Page)
                     .Take(model.ResultsPerPage)
                     .ToList();
+
+                var sb = new StringBuilder();
+                foreach (var school in schools)
+                {
+                    sb.Append(school.Name);
+                    sb.Append(Environment.NewLine);
+                }
+                textBox_Output.Text = sb.ToString();
             }
         }
 
