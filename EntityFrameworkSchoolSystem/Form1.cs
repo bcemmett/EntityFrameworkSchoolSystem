@@ -163,6 +163,22 @@ namespace EntityFrameworkSchoolSystem
             }
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFSchoolSystemContext())
+            {
+                var model = new ResultsModel();
+                var rnd = new Random();
+                model.Page = rnd.Next(1,1000);
+                model.ResultsPerPage = 100;
+                var schools = db.Schools
+                    .OrderBy(s => s.PostalZipCode)
+                    .Skip(model.Page)
+                    .Take(model.ResultsPerPage)
+                    .ToList();
+            }
+        }
+
         private Pupil GetNewPupil()
         {
             return new Pupil
