@@ -168,7 +168,7 @@ namespace EntityFrameworkSchoolSystem
                 model.ResultsPerPage = rnd.Next(10, 100);
                 var schools = db.Schools
                     .OrderBy(s => s.PostalZipCode)
-                    .Skip(model.Page)
+                    .Skip(model.Page * model.ResultsPerPage)
                     .Take(model.ResultsPerPage)
                     .ToList();
 
