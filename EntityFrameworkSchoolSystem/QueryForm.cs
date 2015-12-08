@@ -132,15 +132,20 @@ namespace EntityFrameworkSchoolSystem
             PrintThatFetchingData();
             using (var db = new EFSchoolSystemContext())
             {
-                string firstName = "Ben";
-                string lastName = String.Empty;
-                string city = String.Empty;
-                string postCode = String.Empty;
+                //Search data as input by user
+                var searchModel = new Pupil
+                {
+                    FirstName = "Ben",
+                    LastName = null,
+                    City = null,
+                    PostalZipCode = null
+                };
+
                 List<Pupil> pupils = db.Pupils.Where(p =>
-                        (firstName == String.Empty || p.FirstName == firstName)
-                        && (lastName == String.Empty || p.LastName == lastName)
-                        && (city == String.Empty || p.LastName == city)
-                        && (postCode == String.Empty || p.PostalZipCode == postCode)
+                        (searchModel.FirstName == null || p.FirstName == searchModel.FirstName)
+                        && (searchModel.LastName == null || p.LastName == searchModel.LastName)
+                        && (searchModel.City == null || p.LastName == searchModel.City)
+                        && (searchModel.PostalZipCode == null || p.PostalZipCode == searchModel.PostalZipCode)
                     )
                     .Take(100)
                     .ToList();
