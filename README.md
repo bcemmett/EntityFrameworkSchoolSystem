@@ -1,7 +1,7 @@
 # Entity Framework School System
 
 ##About
-This application illustrates a series of performance problems which are commonly encountered when using Entity Framework. It is designed to accompany the article at http://xxxxxxxxx.
+This application illustrates a series of performance problems which are commonly encountered when using Entity Framework. It is designed to accompany the article at https://www.simple-talk.com/dotnet/.net-tools/entity-framework-performance-and-what-you-can-do-about-it/.
 
 It's built around a SQL Server database with two tables, storing details of Schools and the Pupils who attend them. A WinForms application has an Entity Framework code first model of this database, and some code to access information from it. In all cases, it does this data access inefficiently.
 
@@ -13,7 +13,7 @@ It's built around a SQL Server database with two tables, storing details of Scho
 5. Open the` EntityFrameworkSchoolSystem.sln` solution in Visual Studio. In `App.config`, modify the connection string to point to your database. Build the application (ideally as debug) and run it. Check everything's working by ensuring you get some data back when  clicking Button 1.
 
 ##Performance problems
-Eight common issues are demonstrated - there's a detailed explanation of each at http://xxxxxxxxx. You can see all of these in action by profiling the application using [ANTS Performance Profiler](http://www.red-gate.com/products/dotnet-development/ants-performance-profiler/). Having installed ANTS, click `New profiling session`, select `.NET executable`, and browse to the built application.
+Eight common issues are demonstrated - there's a detailed explanation of each at https://www.simple-talk.com/dotnet/.net-tools/entity-framework-performance-and-what-you-can-do-about-it/. You can see all of these in action by profiling the application using [ANTS Performance Profiler](http://www.red-gate.com/products/dotnet-development/ants-performance-profiler/). Having installed ANTS, click `New profiling session`, select `.NET executable`, and browse to the built application.
 
 1. Retrieving more data than needed
 2. N+1 select issues
