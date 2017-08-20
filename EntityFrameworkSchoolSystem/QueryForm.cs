@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -14,24 +15,13 @@ namespace EntityFrameworkSchoolSystem
             InitializeComponent();
         }
 
+        private Stopwatch _timer;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            PrintThatFetchingData();
-            using (var db = new EFSchoolSystemContext())
-            {
-                string city = "New York";
-
-                List<School> schools = db.Schools.ToList();
-                List<School> newYorkSchools = schools.Where(s => s.City == city).ToList();
-                
-                var sb = new StringBuilder();
-                foreach (var school in newYorkSchools)
-                {
-                    sb.Append(school.Name);
-                    sb.Append(Environment.NewLine);
-                }
-                textBox_Output.Text = sb.ToString();
-            }
+            StartTest("1");
+            string result = DataLayer.DoProblem1();
+            EndTest(result);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,7 +40,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(school.Pupils.Count);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -73,7 +63,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(pupil.LastName);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -97,7 +87,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(pupil.LastName);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -123,7 +113,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(pupil.LastName);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -158,7 +148,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(pupil.LastName);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -183,7 +173,7 @@ namespace EntityFrameworkSchoolSystem
                     sb.Append(school.Name);
                     sb.Append(Environment.NewLine);
                 }
-                textBox_Output.Text = sb.ToString();
+                textBoxResults.Text = sb.ToString();
             }
         }
 
@@ -199,8 +189,25 @@ namespace EntityFrameworkSchoolSystem
                 }
                 db.SaveChanges();
 
-                textBox_Output.Text = "Finished adding data";
+                textBoxResults.Text = "Finished adding data";
             }
+        }
+
+        private void StartTest(string testName)
+        {
+            _timer = Stopwatch.StartNew();
+            textBoxResults.Text = String.Empty;
+            labelTime.Text = String.Empty;
+            labelStatus.Text = $"Doing work for test {testName}";
+            Refresh();
+        }
+
+        private void EndTest(string result)
+        {
+            textBoxResults.Text = result;
+            labelTime.Text = (_timer.ElapsedMilliseconds / 1000.0) + " s";
+            labelStatus.Text = "Done";
+            _timer.Stop();
         }
 
         private Pupil GetNewPupil()
@@ -218,7 +225,7 @@ namespace EntityFrameworkSchoolSystem
 
         private void PrintThatFetchingData()
         {
-            textBox_Output.Text = "Fetching data...";
+            textBoxResults.Text = "Fetching data...";
             Refresh();
         }
     }

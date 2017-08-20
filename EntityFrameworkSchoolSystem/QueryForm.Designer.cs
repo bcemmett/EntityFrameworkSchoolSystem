@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox_Output = new System.Windows.Forms.TextBox();
+            this.textBoxResults = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,14 +56,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox_Output
+            // textBoxResults
             // 
-            this.textBox_Output.Location = new System.Drawing.Point(208, 203);
-            this.textBox_Output.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox_Output.Multiline = true;
-            this.textBox_Output.Name = "textBox_Output";
-            this.textBox_Output.Size = new System.Drawing.Size(617, 278);
-            this.textBox_Output.TabIndex = 1;
+            this.textBoxResults.Location = new System.Drawing.Point(208, 203);
+            this.textBoxResults.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxResults.Multiline = true;
+            this.textBoxResults.Name = "textBoxResults";
+            this.textBoxResults.Size = new System.Drawing.Size(617, 278);
+            this.textBoxResults.TabIndex = 1;
             // 
             // button2
             // 
@@ -213,13 +213,12 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox_Output);
+            this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "QueryForm";
             this.Text = "Entity Framework Problems";
-            this.Load += new System.EventHandler(this.QueryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +227,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox_Output;
+        private System.Windows.Forms.TextBox textBoxResults;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

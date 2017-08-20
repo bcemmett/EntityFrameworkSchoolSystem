@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Problem1RowGreediness.cs" />
     <Compile Include="QueryForm.cs">
       <SubType>Form</SubType>
     </Compile>
