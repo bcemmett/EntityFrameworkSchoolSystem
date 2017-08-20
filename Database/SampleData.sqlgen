@@ -2,10 +2,10 @@
 <!--
 SQL Data Generator 3
 SQL Data Generator
-Version:3.1.0.226-->
+Version:3.2.3.1223-->
 <Project version="2" type="SDGProject">
   <DataSource version="3" type="LiveDatabaseSource">
-    <ServerName>.\sql2014</ServerName>
+    <ServerName>.</ServerName>
     <DatabaseName>EFSchoolSystem</DatabaseName>
     <Username />
     <SavePassword>False</SavePassword>
@@ -15,9 +15,9 @@ Version:3.1.0.226-->
     <IntegratedSecurity>True</IntegratedSecurity>
   </DataSource>
   <Tables type="List&lt;SDGTable&gt;" version="1">
-    <value version="1" type="SDGTable">
+    <value version="3" type="SDGTable">
       <TableType>Generated</TableType>
-      <PopulationDetails version="1" type="PopulationDetails">
+      <PopulationDetails version="2" type="PopulationDetails">
         <PopulationType>RowCount</PopulationType>
         <RowCount>30000000</RowCount>
         <ProportionTableExists>False</ProportionTableExists>
@@ -29,6 +29,8 @@ Version:3.1.0.226-->
       <Append>False</Append>
       <Name>Pupils</Name>
       <Schema>dbo</Schema>
+      <IsTemporal>False</IsTemporal>
+      <IdentityInsert>False</IdentityInsert>
       <Fields type="List&lt;SDGField&gt;" version="1">
         <value version="1" type="SDGField">
           <Name>PupilId</Name>
@@ -68,16 +70,16 @@ Version:3.1.0.226-->
                 <value type="string">False</value>
               </element>
               <element>
-                <key type="string">Seed</key>
-                <value type="string">1</value>
-              </element>
-              <element>
                 <key type="string">NullsAllowed</key>
                 <value type="string">False</value>
               </element>
               <element>
                 <key type="string">NullProportion</key>
                 <value type="string">0.01</value>
+              </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">1</value>
               </element>
             </GeneratorProperties>
           </Generator>
@@ -108,16 +110,16 @@ Version:3.1.0.226-->
                 <value type="string">False</value>
               </element>
               <element>
-                <key type="string">Seed</key>
-                <value type="string">2</value>
-              </element>
-              <element>
                 <key type="string">NullsAllowed</key>
                 <value type="string">False</value>
               </element>
               <element>
                 <key type="string">NullProportion</key>
                 <value type="string">0.01</value>
+              </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">2</value>
               </element>
             </GeneratorProperties>
           </Generator>
@@ -280,16 +282,16 @@ Version:3.1.0.226-->
                 <value type="string">False</value>
               </element>
               <element>
-                <key type="string">Seed</key>
-                <value type="string">6</value>
-              </element>
-              <element>
                 <key type="string">NullsAllowed</key>
                 <value type="string">False</value>
               </element>
               <element>
                 <key type="string">NullProportion</key>
                 <value type="string">0.01</value>
+              </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">6</value>
               </element>
             </GeneratorProperties>
           </Generator>
@@ -400,10 +402,6 @@ Version:3.1.0.226-->
                 <value type="string">1000</value>
               </element>
               <element>
-                <key type="string">Seed</key>
-                <value type="string">9</value>
-              </element>
-              <element>
                 <key type="string">NullsAllowed</key>
                 <value type="string">True</value>
               </element>
@@ -411,12 +409,16 @@ Version:3.1.0.226-->
                 <key type="string">NullProportion</key>
                 <value type="string">0.01</value>
               </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">9</value>
+              </element>
             </GeneratorProperties>
           </Generator>
         </value>
       </Fields>
       <ForeignKeyProperties type="List&lt;ForeignKeyProperty&gt;" version="1">
-        <value version="1" type="ForeignKeyProperty">
+        <value version="2" type="ForeignKeyProperty">
           <Fields type="List&lt;string&gt;" version="1">
             <value type="string">SchoolId</value>
           </Fields>
@@ -430,9 +432,9 @@ Version:3.1.0.226-->
         </value>
       </ForeignKeyProperties>
     </value>
-    <value version="1" type="SDGTable">
+    <value version="3" type="SDGTable">
       <TableType>Generated</TableType>
-      <PopulationDetails version="1" type="PopulationDetails">
+      <PopulationDetails version="2" type="PopulationDetails">
         <PopulationType>RowCount</PopulationType>
         <RowCount>50000</RowCount>
         <ProportionTableExists>False</ProportionTableExists>
@@ -444,6 +446,8 @@ Version:3.1.0.226-->
       <Append>False</Append>
       <Name>Schools</Name>
       <Schema>dbo</Schema>
+      <IsTemporal>False</IsTemporal>
+      <IdentityInsert>False</IdentityInsert>
       <Fields type="List&lt;SDGField&gt;" version="1">
         <value version="1" type="SDGField">
           <Name>SchoolId</Name>
@@ -659,16 +663,16 @@ Version:3.1.0.226-->
                 <value type="string">False</value>
               </element>
               <element>
-                <key type="string">Seed</key>
-                <value type="string">1029</value>
-              </element>
-              <element>
                 <key type="string">NullsAllowed</key>
                 <value type="string">False</value>
               </element>
               <element>
                 <key type="string">NullProportion</key>
                 <value type="string">0.01</value>
+              </element>
+              <element>
+                <key type="string">Seed</key>
+                <value type="string">1029</value>
               </element>
             </GeneratorProperties>
           </Generator>
@@ -727,6 +731,7 @@ Version:3.1.0.226-->
     <FireDeleteTriggers>False</FireDeleteTriggers>
     <CheckConstraints>True</CheckConstraints>
     <ShuffleBlockSize>1000</ShuffleBlockSize>
+    <AutoGeneratePreviews>True</AutoGeneratePreviews>
   </ProjectOptions>
   <PreScripts type="SQLScripts" version="1" />
   <PostScripts type="SQLScripts" version="1">
