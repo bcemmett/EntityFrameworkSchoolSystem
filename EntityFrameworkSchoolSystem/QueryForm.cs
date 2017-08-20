@@ -85,11 +85,5 @@ namespace EntityFrameworkSchoolSystem
             labelStatus.Text = "Done";
             _timer.Stop();
         }
-
-        private void PrintThatFetchingData()
-        {
-            textBoxResults.Text = "Fetching data...";
-            Refresh();
-        }
     }
 }

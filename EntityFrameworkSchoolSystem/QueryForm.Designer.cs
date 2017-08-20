@@ -171,9 +171,9 @@
             this.labelStatus.Location = new System.Drawing.Point(412, 40);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(107, 25);
+            this.labelStatus.Size = new System.Drawing.Size(80, 25);
             this.labelStatus.TabIndex = 11;
-            this.labelStatus.Text = "Loading...";
+            this.labelStatus.Text = "Ready.";
             // 
             // labelTime
             // 
