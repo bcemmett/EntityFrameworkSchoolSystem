@@ -4,7 +4,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
-        public static string DoProblem8()
+        public string DoProblem8()
         {
             using (var db = new EFSchoolSystemContext())
             {

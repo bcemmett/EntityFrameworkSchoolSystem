@@ -1,80 +1,85 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 using System.Windows.Forms;
 
 namespace EntityFrameworkSchoolSystem
 {
     public partial class QueryForm : Form
     {
+        private readonly Stopwatch _timer = new Stopwatch();
+        private readonly StringBuilder _outputBuffer = new StringBuilder();
+        private DataLayer _data;
+
         public QueryForm()
         {
             InitializeComponent();
+            _data = new DataLayer();
         }
-
-        private Stopwatch _timer;
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             StartTest("1");
-            string result = DataLayer.DoProblem1();
+            string result = _data.DoProblem1();
             EndTest(result);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             StartTest("2");
-            string result = DataLayer.DoProblem2();
+            string result = _data.DoProblem2();
             EndTest(result);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             StartTest("3");
-            string result = DataLayer.DoProblem3();
+            string result = _data.DoProblem3();
             EndTest(result);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             StartTest("4");
-            string result = DataLayer.DoProblem4();
+            string result = _data.DoProblem4();
             EndTest(result);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             StartTest("5");
-            string result = DataLayer.DoProblem5();
+            string result = _data.DoProblem5();
             EndTest(result);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             StartTest("6");
-            string result = DataLayer.DoProblem6();
+            string result = _data.DoProblem6();
             EndTest(result);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             StartTest("7");
-            string result = DataLayer.DoProblem7();
+            string result = _data.DoProblem7();
             EndTest(result);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             StartTest("8");
-            string result = DataLayer.DoProblem8();
+            string result = _data.DoProblem8();
             EndTest(result);
         }
 
         private void StartTest(string testName)
         {
-            _timer = Stopwatch.StartNew();
+            _timer.Restart();
             textBoxResults.Text = String.Empty;
             labelTime.Text = String.Empty;
             labelStatus.Text = $"Doing work for test {testName}";
+            _outputBuffer.Clear();
             Refresh();
         }
 

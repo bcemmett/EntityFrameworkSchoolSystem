@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using EntityFrameworkSchoolSystem.Models;
 
 namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
-        public static string DoProblem7()
+        public string DoProblem7()
         {
             using (var db = new EFSchoolSystemContext())
             {
@@ -21,13 +20,11 @@ namespace EntityFrameworkSchoolSystem
                     .Take(model.ResultsPerPage)
                     .ToList();
 
-                var sb = new StringBuilder();
                 foreach (var school in schools)
                 {
-                    sb.Append(school.Name);
-                    sb.Append(Environment.NewLine);
+                    _outputBuffer.Append(school.Name);
                 }
-                return sb.ToString();
+                return _outputBuffer.ToString();
             }
         }
     }

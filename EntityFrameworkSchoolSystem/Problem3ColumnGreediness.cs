@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using EntityFrameworkSchoolSystem.Models;
 
 namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
-        public static string DoProblem3()
+        public string DoProblem3()
         {
             using (var db = new EFSchoolSystemContext())
             {
@@ -18,15 +16,12 @@ namespace EntityFrameworkSchoolSystem
                     .Where(p => p.SchoolId == schoolId)
                     .ToList();
 
-                var sb = new StringBuilder();
                 foreach (var pupil in pupils)
                 {
-                    sb.Append(pupil.FirstName);
-                    sb.Append(" ");
-                    sb.Append(pupil.LastName);
-                    sb.Append(Environment.NewLine);
+                    WriteOutput($"{pupil.FirstName} {pupil.LastName}");
                 }
-                return sb.ToString();
+
+                return _outputBuffer.ToString();
             }
         }
     }

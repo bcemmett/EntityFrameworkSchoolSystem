@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer.cs" />
     <Compile Include="Problem1RowGreediness.cs" />
     <Compile Include="Problem2NPlusOne.cs" />
     <Compile Include="Problem3ColumnGreediness.cs" />
