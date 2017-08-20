@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecompileDbCommandInterceptor.cs" />
     <Compile Include="ResultsModel.cs" />
+    <Compile Include="WhyEntityFramework.cs" />
     <EmbeddedResource Include="QueryForm.resx">
       <DependentUpon>QueryForm.cs</DependentUpon>
     </EmbeddedResource>
