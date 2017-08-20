@@ -52,6 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problem1RowGreediness.cs" />
+    <Compile Include="Problem2NPlusOne.cs" />
+    <Compile Include="Problem3ColumnGreediness.cs" />
+    <Compile Include="Problem4MismatchedDataTypes.cs" />
+    <Compile Include="Problem5MissingIndexes.cs" />
+    <Compile Include="Problem6GenericQueries.cs" />
+    <Compile Include="Problem7CacheBloat.cs" />
+	<Compile Include="Problem8InsertingData.cs" />
     <Compile Include="QueryForm.cs">
       <SubType>Form</SubType>
     </Compile>
