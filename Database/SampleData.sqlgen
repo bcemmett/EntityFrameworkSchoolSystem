@@ -777,6 +777,19 @@ WHERE   PupilId IN ( SELECT TOP 100000
                       FROM      dbo.Pupils
                       ORDER BY  PupilId ASC )</Script>
     </value>
+    <value version="1" type="SQLScript">
+      <SQLScriptType>InternalSQLScript</SQLScriptType>
+      <Name>Make SchoolId 1 pupil photos large</Name>
+      <Script>UPDATE dbo.Pupils
+SET    Picture = ( SELECT CAST((   SELECT   TOP 600 Picture
+                                   FROM     dbo.Pupils
+                                   WHERE    Picture IS NOT NULL
+                                   ORDER BY PupilId DESC
+                                   FOR XML PATH('')
+                               ) AS VARBINARY(MAX))
+                 )
+WHERE  SchoolId = 1</Script>
+    </value>
   </PostScripts>
   <IsRefresh>False</IsRefresh>
 </Project>
