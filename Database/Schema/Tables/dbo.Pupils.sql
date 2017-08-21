@@ -11,10 +11,12 @@ CREATE TABLE [dbo].[Pupils]
 [SchoolId] [int] NOT NULL,
 [Picture] [varbinary] (max) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-CREATE NONCLUSTERED INDEX [NonClusteredIndex_ZipCode] ON [dbo].[Pupils] ([PostalZipCode]) INCLUDE ([FirstName], [LastName], [PupilId]) ON [PRIMARY]
-
 GO
 ALTER TABLE [dbo].[Pupils] ADD CONSTRAINT [PK_PupilId] PRIMARY KEY CLUSTERED  ([PupilId]) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [NonClusteredIndex_ZipCode] ON [dbo].[Pupils] ([PostalZipCode]) INCLUDE ([FirstName], [LastName], [PupilId]) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [NonClusteredIndex_SchoolId] ON [dbo].[Pupils] ([SchoolId]) INCLUDE ([Adderss2], [Address1], [City], [FirstName], [LastName], [PhoneNumber], [PostalZipCode], [PupilId]) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Pupils] ADD CONSTRAINT [FK_SchoolId] FOREIGN KEY ([SchoolId]) REFERENCES [dbo].[Schools] ([SchoolId])
 GO
