@@ -744,7 +744,7 @@ WHERE   City = 'New York'
 
 UPDATE  dbo.Schools
 SET     City = 'New York'
-WHERE   SchoolId IN ( SELECT TOP 500
+WHERE   SchoolId IN ( SELECT TOP 120
                                 SchoolId
                       FROM      dbo.Schools
                       ORDER BY  SchoolId ASC )</Script>
