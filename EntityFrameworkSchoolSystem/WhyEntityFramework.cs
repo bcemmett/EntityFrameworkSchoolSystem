@@ -21,7 +21,8 @@ namespace EntityFrameworkSchoolSystem
                         SELECT p.PupilId, p.FirstName, p.LastName, p.Address1, p.Adderss2,
                                p.PostalZipCode, p.City, p.PhoneNumber, p.SchoolId, p.Picture
                         FROM   dbo.Pupils p
-                               INNER JOIN dbo.Schools s ON s.SchoolId = p.SchoolId
+                        INNER JOIN dbo.Schools s
+                        ON     s.SchoolId = p.SchoolId
                         WHERE  s.Name = @schoolName
                         ";
 
