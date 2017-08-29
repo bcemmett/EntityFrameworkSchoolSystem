@@ -17,14 +17,15 @@ namespace EntityFrameworkSchoolSystem
 
                 using (var cmd = new SqlCommand())
                 {
-                    cmd.Connection = conn;
                     cmd.CommandText = @"
                         SELECT p.PupilId, p.FirstName, p.LastName, p.Address1, p.Adderss2,
-                        p.PostalZipCode, p.City, p.PhoneNumber, p.SchoolId, p.Picture
+                               p.PostalZipCode, p.City, p.PhoneNumber, p.SchoolId, p.Picture
                         FROM   dbo.Pupils p
                                INNER JOIN dbo.Schools s ON s.SchoolId = p.SchoolId
                         WHERE  s.Name = @schoolName
                         ";
+
+                    cmd.Parameters.AddWithValue("@schoolName", schoolName);
                     
                     using (var reader = cmd.ExecuteReader())
                     {
