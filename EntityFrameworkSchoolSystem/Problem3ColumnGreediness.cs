@@ -24,5 +24,25 @@ namespace EntityFrameworkSchoolSystem
                 return _outputBuffer.ToString();
             }
         }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private class PupilName
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+        }
     }
 }

@@ -21,5 +21,25 @@ namespace EntityFrameworkSchoolSystem
                 return _outputBuffer.ToString();
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private class SchoolPupilCount
+        {
+            public string Name { get; set; }
+            public int Count { get; set; }
+        }
     }
 }
