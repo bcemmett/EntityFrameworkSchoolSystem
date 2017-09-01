@@ -4,6 +4,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
+        //Add some pupils to the database
         public string DoProblem8()
         {
             using (var db = new EFSchoolSystemContext())

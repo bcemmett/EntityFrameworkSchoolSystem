@@ -6,6 +6,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
+        //Retrieve school names in a city
         public string DoProblem1()
         {
             using (var db = new EFSchoolSystemContext())

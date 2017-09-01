@@ -5,6 +5,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
+        //Retrieve pupil names in a postcode
         public string DoProblem4()
         {
             using (var db = new EFSchoolSystemContext())

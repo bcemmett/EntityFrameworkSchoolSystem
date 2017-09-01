@@ -6,6 +6,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
+        //Search pupils based on optional criteria
         public string DoProblem6()
         {
             using (var db = new EFSchoolSystemContext())

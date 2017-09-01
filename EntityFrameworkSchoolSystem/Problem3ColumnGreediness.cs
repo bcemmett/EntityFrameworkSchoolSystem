@@ -6,6 +6,7 @@ namespace EntityFrameworkSchoolSystem
 {
     public partial class DataLayer
     {
+        //Retrieve pupil names in a single school
         public string DoProblem3()
         {
             using (var db = new EFSchoolSystemContext())
