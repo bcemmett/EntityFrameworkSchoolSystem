@@ -9,7 +9,7 @@ namespace EntityFrameworkSchoolSystem
         {
             using (var db = new EFSchoolSystemContext())
             {
-                for (int i = 0; i < 2000; i++)
+                for (int i = 0; i < 500; i++)
                 {
                     Pupil pupil = GetNewPupil();
                     db.Pupils.Add(pupil);
