@@ -20,13 +20,14 @@ namespace EntityFrameworkSchoolSystem
                     PostalZipCode = null
                 };
 
-                List<Pupil> pupils = db.Pupils.Where(p =>
+                List<PupilName> pupils = db.Pupils.Where(p =>
                         (searchModel.FirstName == null || p.FirstName == searchModel.FirstName)
                         && (searchModel.LastName == null || p.LastName == searchModel.LastName)
                         && (searchModel.City == null || p.LastName == searchModel.City)
                         && (searchModel.PostalZipCode == null || p.PostalZipCode == searchModel.PostalZipCode)
                     )
                     .Take(100)
+                    .Select(p => new PupilName{FirstName = p.FirstName, LastName = p.LastName})
                     .ToList();
 
                 foreach (var pupil in pupils)
