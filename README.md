@@ -22,4 +22,4 @@ Eight common issues are demonstrated - there's a detailed explanation of each at
 5. Missing indexes
 6. Generic queries
 7. Generating unparameterised queries
-8. Change detection
+8. Change detection and unbatched insert statements
